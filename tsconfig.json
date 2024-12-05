@@ -12,5 +12,5 @@
 		"forceConsistentCasingInFileNames": true,
 		"emitDeclarationOnly": true
 	},
-	"files": ["index.ts", "types.ts"]
+	"files": ["index.ts", "types.ts", "point-cluster.ts"]
 }
