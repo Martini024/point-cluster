@@ -1,0 +1,38 @@
+{
+	"name": "@martini024/point-cluster",
+	"version": "1.0.1",
+	"description": "A very fast point clustering library",
+	"main": "dist/point-cluster.js",
+	"type": "module",
+	"types": "dist/index.d.ts",
+	"exports": "./index.ts",
+	"repository": "https://github.com/Martini024/point-cluster",
+	"author": "Martini024",
+	"license": "MIT",
+	"private": false,
+	"scripts": {
+		"pretest": "eslint index.ts types.ts",
+		"test": "node --test",
+		"build": "rollup -c",
+		"prepublishOnly": "npm run test && npm run build"
+	},
+	"devDependencies": {
+		"@rollup/plugin-terser": "^0.4.4",
+		"@rollup/plugin-typescript": "^12.1.1",
+		"eslint": "^9.16.0",
+		"eslint-config-mourner": "^4.0.2",
+		"rollup": "^4.28.0",
+		"tslib": "^2.8.1",
+		"typescript": "^5.7.2"
+	},
+	"dependencies": {
+		"kdbush": "^4.0.2"
+	},
+	"keywords": [
+		"clustering",
+		"2D",
+		"spatial",
+		"zoom",
+		"point"
+	]
+}
