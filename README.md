@@ -85,11 +85,25 @@ Conditions for correct usage:
 
 ## Methods
 
-- `load(points: Point[]): void` — Loads an array of points into the clustering system. Once loaded, the index is immutable.
-- `getClusters(bbox: BBox, zoom: number): (Point | Cluster)[]` — Returns clusters and points for the given bounding box and zoom level.
-- `getChildren(clusterId: number): (Point | Cluster)[]` — Retrieves children of a specific cluster at the next zoom level. Throws an error if the cluster ID does not exist.
-- `getLeaves(clusterId: number, limit?: number, offset?: number): Point[]` — Retrieves points within a cluster, with optional pagination.
-- `getClusterExpansionZoom(clusterId: number): number` — Returns the zoom level where the cluster expands into its children. Throws an error if the cluster ID does not exist.
+#### `load(points: Point[]): void`
+
+Loads an array of points into the clustering system. Once loaded, the index is immutable.
+
+#### `getClusters(bbox: BBox, zoom: number): (Point | Cluster)[]`
+
+Returns clusters and points for the given bounding box and zoom level.
+
+#### `getChildren(clusterId: number): (Point | Cluster)[]`
+
+Retrieves children of a specific cluster at the next zoom level. Throws an error if the cluster ID does not exist.
+
+#### `getLeaves(clusterId: number, limit?: number, offset?: number): Point[]`
+
+Retrieves points within a cluster, with optional pagination.
+
+#### `getClusterExpansionZoom(clusterId: number): number`
+
+Returns the zoom level where the cluster expands into its children. Throws an error if the cluster ID does not exist.
 
 ---
 
