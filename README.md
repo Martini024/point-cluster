@@ -1,6 +1,8 @@
 # point-cluster [![npm version](https://img.shields.io/npm/v/@martini024/point-cluster.svg)](https://www.npmjs.com/package/@martini024/point-cluster)
 
-**point-cluster** is a 2D Cartesian coordinate clustering library derived from [supercluster](https://github.com/mapbox/supercluster). **supercluster** uses geospatial points designed for Earth's curved surface, but this introduces distortions when applied to 2D spaces. These distortions occur because geospatial systems scale distances inconsistently, especially near the poles, making clustering radii inaccurate.
+**point-cluster** is a 2D Cartesian coordinate clustering library derived from [supercluster](https://github.com/mapbox/supercluster). 
+
+**supercluster** uses geospatial points designed for Earth's curved surface, but this introduces distortions when applied to 2D spaces. These distortions occur because geospatial systems scale distances inconsistently, especially near the poles, making clustering radii inaccurate.
 
 **point-cluster** removes these geospatial constraints, ensuring accurate and consistent clustering in 2D Cartesian applications. Whether for flat maps, floor plans, or other 2D visualizations, it delivers high performance and flexibility for interactive zoomable visualizations.
 
