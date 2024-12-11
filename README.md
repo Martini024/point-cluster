@@ -1,4 +1,4 @@
-# point-cluster
+# point-cluster [![npm version](https://img.shields.io/npm/v/@martini024/point-cluster.svg)](https://www.npmjs.com/package/@martini024/point-cluster)
 
 **point-cluster** is a 2D Cartesian coordinate clustering library derived from [supercluster](https://github.com/mapbox/supercluster), removing its geospatial constraints for use on 2D maps. It provides a high-performance solution for clustering points dynamically across different zoom levels, ideal for use in interactive 2D visualizations.
 
