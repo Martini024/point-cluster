@@ -1,6 +1,6 @@
 {
 	"name": "@martini024/point-cluster",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "A very fast point clustering library",
 	"main": "dist/point-cluster.js",
 	"type": "module",
