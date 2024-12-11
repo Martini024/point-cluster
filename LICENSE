@@ -15,6 +15,6 @@ TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
 THIS SOFTWARE.
 
 Attribution:
-This project includes work derived from Mapbox's [Supercluster](https://github.com/mapbox/supercluster), 
+This project includes work derived from Mapbox's [supercluster](https://github.com/mapbox/supercluster), 
 (c) 2024, licensed under the ISC License. Adjustments have been made to adapt the functionality 
 for 2D Cartesian coordinate clustering use cases.
