@@ -8,7 +8,7 @@
 	"exports": "./index.ts",
 	"repository": "https://github.com/Martini024/point-cluster",
 	"author": "Martini024",
-	"license": "MIT",
+	"license": "ISC",
 	"private": false,
 	"scripts": {
 		"pretest": "eslint index.ts types.ts",
