@@ -1,6 +1,8 @@
 # point-cluster [![npm version](https://img.shields.io/npm/v/@martini024/point-cluster.svg)](https://www.npmjs.com/package/@martini024/point-cluster)
 
-**point-cluster** is a 2D Cartesian coordinate clustering library derived from [supercluster](https://github.com/mapbox/supercluster), removing its geospatial constraints for use on 2D maps. It provides a high-performance solution for clustering points dynamically across different zoom levels, ideal for use in interactive 2D visualizations.
+**point-cluster** is a 2D Cartesian coordinate clustering library derived from [supercluster](https://github.com/mapbox/supercluster). **supercluster** uses geospatial points designed for Earth's curved surface, but this introduces distortions when applied to 2D spaces. These distortions occur because geospatial systems scale distances inconsistently, especially near the poles, making clustering radii inaccurate.
+
+**point-cluster** removes these geospatial constraints, ensuring accurate and consistent clustering in 2D Cartesian applications. Whether for flat maps, floor plans, or other 2D visualizations, it delivers high performance and flexibility for interactive zoomable visualizations.
 
 ---
 
@@ -91,7 +93,7 @@ Loads an array of points into the clustering system. Once loaded, the index is i
 
 #### `getClusters(bbox: BBox, zoom: number): (Point | Cluster)[]`
 
-Returns clusters and points for the given bounding box and zoom level.
+For the given bbox array ([minX, minY, maxX, maxY]) and zoom, returns an array of clusters and points.
 
 #### `getChildren(clusterId: number): (Point | Cluster)[]`
 
@@ -99,11 +101,13 @@ Retrieves children of a specific cluster at the next zoom level. Throws an error
 
 #### `getLeaves(clusterId: number, limit?: number, offset?: number): Point[]`
 
-Retrieves points within a cluster, with optional pagination.
+Returns all the points of a cluster (given its `cluster_id`), with pagination support:
+`limit` is the number of points to return (set to `Infinity` for all points),
+and `offset` is the amount of points to skip (for pagination). Throws an error if the cluster ID does not exist.
 
 #### `getClusterExpansionZoom(clusterId: number): number`
 
-Returns the zoom level where the cluster expands into its children. Throws an error if the cluster ID does not exist.
+Returns the zoom on which the cluster expands into several children (useful for "click to zoom" feature) given the cluster's `cluster_id`. Throws an error if the cluster ID does not exist.
 
 ---
 
