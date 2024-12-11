@@ -42,6 +42,27 @@ export interface Options<P, C> {
 	log: boolean;
 
 	/**
+	 * A function that returns the scaling factor for the radius based on the zoom level.
+	 *
+	 * @type {(zoom: number) => number}
+	 * @default LINEAR_SCALE
+	 * @description
+	 * The `scalingFunction` determines how the radius should scale as the zoom level changes.
+	 * By default, the scaling follows a linear scale where the radius decreases inversely
+	 * proportional to the zoom level.
+	 *
+	 * @example
+	 * // Default scaling (Linear Scale)
+	 * const LINEAR_SCALE = (zoom) => 1 / zoom;
+	 *
+	 * // Custom scaling (Exponential Scale)
+	 * import { EXP_SCALE } from '@martini024/point-cluster';
+	 * const EXP_SCALE = (zoom) => Math.pow(2, -zoom);
+	 *
+	 */
+	scalingFunction: (zoom: number) => number;
+
+	/**
 	 * A function that returns cluster properties corresponding to a single point.
 	 *
 	 * @example

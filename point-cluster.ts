@@ -8,6 +8,9 @@ const fround =
 		return tmp[0];
 	})(new Float32Array(1));
 
+const LINEAR_SCALE = (zoom: number) => 1 / zoom;
+export const EXP_SCALE = (zoom: number) => Math.pow(2, -zoom);
+
 const OFFSET_ZOOM = 2;
 const OFFSET_ID = 3;
 const OFFSET_PARENT = 4;
@@ -28,6 +31,7 @@ export class PointClusterImpl<P extends Record<string, any>, C extends Record<st
 		radius: 40, // cluster radius in pixels
 		nodeSize: 64, // size of the KD-tree leaf node, affects performance
 		log: false, // whether to log timing info
+		scalingFunction: LINEAR_SCALE, // radius scaling function on zoom level
 		// a reduce function for calculating custom cluster properties
 		reduce: undefined, // (accumulated, props) => { accumulated.sum += props.sum; }
 		// properties to use for individual points when running the reducer
@@ -191,8 +195,8 @@ export class PointClusterImpl<P extends Record<string, any>, C extends Record<st
 	}
 
 	private _cluster(tree: KDBush, zoom: number) {
-		const { radius, map, reduce, minPoints } = this.options;
-		const r = radius / zoom;
+		const { radius, scalingFunction, map, reduce, minPoints } = this.options;
+		const r = radius * scalingFunction(zoom);
 		const data = new tree.ArrayType(tree.data) as Float32Array;
 		const nextData: number[] = [];
 		const stride = this.stride;
